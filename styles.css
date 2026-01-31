@@ -1,0 +1,11 @@
+.container-fluid > ul{
+    display: flex;
+    list-style: none;
+    margin-right: 15px;
+}
+.container-fluid > ul > li {
+    margin-right: 20px;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+}
