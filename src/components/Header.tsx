@@ -1,17 +1,27 @@
-import { LOGO_URL } from "../utils/constants.js";
+import { useState } from "react";
+import { LOGO_URL } from "../utils/constants";
 const Header = () => {
+  const [btnName, setBtnName] = useState('login')
   return (
-    <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-            <img src={LOGO_URL} width='80' className="d-inline-block align-text-top"></img>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-    </nav>
+    
+    <div className="header">
+      <div className="logo">
+        <img src={LOGO_URL}></img>
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>HOME</li>
+          <li>CONTACT</li>
+          <li>ABOUT</li>
+          <li>CART</li>
+          <button className="login-btn" onClick={() => {
+            btnName === 'login' ? setBtnName('logout') : setBtnName('login')
+          }}>
+            {btnName}
+          </button>
+        </ul>
+      </div>
+    </div>
   );
 };
 
