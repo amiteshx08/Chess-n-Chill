@@ -14,7 +14,7 @@ export class Knight extends Piece {
         {x: -2, y: -1},
     ]
 
-    constructor(pieceColor: Color) {
+    constructor(private pieceColor: Color) {
         super(pieceColor)
         this._FENChar = pieceColor === Color.White ? FENChar.WhiteKnight : FENChar.BlackKnight
     }
