@@ -2,6 +2,7 @@ import { FENChar, Coords, Color } from "../models";
 import { Piece } from "./pieces";
 
 export class King extends Piece {
+    private _hasMoved: boolean = false
     protected override _FENChar: FENChar;
     protected override _directions: Coords[] = [
         {x: 0, y: 1},
@@ -17,5 +18,13 @@ export class King extends Piece {
     constructor(private pieceColor: Color) {
         super(pieceColor)
         this._FENChar = pieceColor === Color.White ? FENChar.WhiteKing : FENChar.BlackKing
+    }
+    // Castling logic
+    public get hasMoved(): boolean {
+        return this._hasMoved
+    }
+
+    public set hasMoved(_) {
+        this._hasMoved = true
     }
 }
